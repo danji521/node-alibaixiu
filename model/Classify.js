@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('./Connect')
 // 用户
 const classifySchema = new mongoose.Schema({
 	classifyArry: [Object]

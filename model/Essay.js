@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('./Connect')
 // 文章
 const essaySchema = new mongoose.Schema({
 	title: String,
