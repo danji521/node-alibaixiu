@@ -17,4 +17,4 @@ app.use('/home', home);
 
 
 app.listen(3000); //监听端口
-console.log("服务器启动成功")
+console.log("服务器启动成功    http://localhost:3000/")
