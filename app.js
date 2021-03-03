@@ -4,11 +4,11 @@ const path = require('path'); //路径
 app.use(express.static(path.join(__dirname, 'public'))) // 实现静态资源访问功能
 
 // 数据库
-require('./model/connect')
-// 添加路由
-const home = require('./routes/home')
-home.use('', home)
+require('./model/Connect');
 
+// 添加路由
+const home = require('./routes/home.js');
+app.use('/home', home);
 
 
 
