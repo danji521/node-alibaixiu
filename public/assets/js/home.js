@@ -9,7 +9,7 @@ $.get('/home/swipe', (res) => {
 // 导航
 $.get('/home/classify', (res) => {
 	let html = template('nav', {
-		data: res[0].classifyArry
+		data: res
 	});
 	$('.nav').html(html);
 })
