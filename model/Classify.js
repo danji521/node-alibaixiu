@@ -2,24 +2,13 @@ const mongoose = require('mongoose');
 require('./Connect')
 // 用户
 const classifySchema = new mongoose.Schema({
-	classifyArry: [Object]
+	title: String,
+	icon: String
 });
 const Classify = mongoose.model('classify', classifySchema);
 // 创建文档
 // Classify.create({
-// 	classifyArry: [{
-// 		title: "会生活",
-// 		font: "fa-phone"
-// 	}, {
-// 		title: "会生活",
-// 		font: "fa-phone"
-// 	}, {
-// 		title: "会生活",
-// 		font: "fa-phone"
-// 	}, {
-// 		title: "会生活",
-// 		font: "fa-phone"
-// 	}]
+// 	classify: "会生活"
 // }).then(res => {
 // 	console.log("创建成功")
 // })

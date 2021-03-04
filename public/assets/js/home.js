@@ -8,7 +8,6 @@ $.get('/home/swipe', (res) => {
 })
 // 导航
 $.get('/home/classify', (res) => {
-	console.log(res[0].classifyArry)
 	let html = template('nav', {
 		data: res[0].classifyArry
 	});
@@ -21,10 +20,6 @@ $.get('/home/recommend', (res) => {
 		data: res
 	});
 	$('.hots ul').html(html);
-})
-// 搜索
-$.get('/home/search', (res) => {
-	// console.log(res)
 })
 // 随机推荐
 $.get('/home/random', (res) => {
@@ -44,7 +39,6 @@ $.get('/home/comment', (res) => {
 })
 // 最新发布
 $.get('/home/release', (res) => {
-	// console.log(res)
 	let html = template('new', {
 		data: res,
 		title: "最新发布"
@@ -52,15 +46,27 @@ $.get('/home/release', (res) => {
 	$('.new').html(html);
 })
 // Sidebar导航
-$(".nav li").click(function() {
-	let arry = ['奇趣事', '潮科技', '会生活', '美奇迹'];
-	$('.hots').hide();
-	let index = $(this).index() + 1;
-	$.get('/home/release', 'state=' + index, (res) => {
+$(".nav").click(function() {
+	console.log($(".nav li"));
+	// $('.hots').hide();
+	// let index = $(this).index() + 1;
+	// $.get('/home/release', 'state=' + index, (res) => {
+	// 	let html = template('new', {
+	// 		data: res,
+	// 		title: arry[index - 1]
+	// 	});
+	// 	$('.new').html(html);
+	// })
+});
+// 搜索
+$(".search .btn").click(function() {
+	let val = $('.search .keys').val();
+	$.get('/home/search', 'text=' + val, (res) => {
 		let html = template('new', {
 			data: res,
-			title: arry[index - 1]
+			title: "搜索结果"
 		});
 		$('.new').html(html);
 	})
+	$('.hots').hide();
 });

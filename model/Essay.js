@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('./Connect')
+// require('./Connect')
 // 文章
 const essaySchema = new mongoose.Schema({
 	title: String,
@@ -11,7 +11,8 @@ const essaySchema = new mongoose.Schema({
 	fabulous: Number,
 	classify: String,
 	state: Number,
-	time: Number
+	time: Number,
+	img: String
 });
 const Essay = mongoose.model('essay', essaySchema);
 // 创建文档
@@ -25,7 +26,8 @@ const Essay = mongoose.model('essay', essaySchema);
 // 	fabulous: 34,
 // 	classify: '会生活',
 // 	state: 1,
-// 	time: new Date().getTime()
+// 	time: new Date().getTime(),
+// 	img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-61f8e92f-5abd-47ad-a939-823fb1b77e54/ee37d801-21bd-4fa6-90a0-221ffd5dd009.jpg'
 // }).then(res => {
 // 	console.log("创建成功")
 // })
