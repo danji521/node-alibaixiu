@@ -19,8 +19,9 @@
 	 essay       文章
 	 deleteCassifie删除分类
 	                id
-	
-	
+	 revise      修改分类
+	 addEssay    添加文章
+	screen       文章筛选
 	
 	
 	

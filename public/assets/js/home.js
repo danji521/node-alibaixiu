@@ -45,19 +45,6 @@ $.get('/home/release', (res) => {
 	});
 	$('.new').html(html);
 })
-// Sidebar导航
-$(".nav").click(function() {
-	console.log($(".nav li"));
-	// $('.hots').hide();
-	// let index = $(this).index() + 1;
-	// $.get('/home/release', 'state=' + index, (res) => {
-	// 	let html = template('new', {
-	// 		data: res,
-	// 		title: arry[index - 1]
-	// 	});
-	// 	$('.new').html(html);
-	// })
-});
 // 搜索
 $(".search .btn").click(function() {
 	let val = $('.search .keys').val();
@@ -70,3 +57,14 @@ $(".search .btn").click(function() {
 	})
 	$('.hots').hide();
 });
+// Sidebar导航
+function nav(even) {
+	$.get('/home/nav', 'text=' + even, (res) => {
+		let html = template('new', {
+			data: res,
+			title: even
+		});
+		$('.new').html(html);
+	})
+	$('.hots').hide();
+}

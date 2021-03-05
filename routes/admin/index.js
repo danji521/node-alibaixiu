@@ -7,12 +7,13 @@ module.exports = async (req, res, next) => {
 	const musterDow = await Essay.find({
 		state: 0
 	});
+	
 	// 分类
 	const classifyAll = await Classify.find();
 	let summary = {
 		essay_all: musterAll.length,
 		essay_dow: musterDow.length,
-		classify:classifyAll[0].classifyArry.length,
+		classify:classifyAll.length,
 		comment_up: "",
 		comment_bt: ""
 	}

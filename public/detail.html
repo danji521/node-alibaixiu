@@ -105,7 +105,7 @@
 			   <li>
 			   	<a href="javascript:;">
 			   		<img src="{{$value.img}}" alt="">
-			   		<span>{{$value.content}}</span>
+			   		<span>{{$value.title}}</span>
 			   	</a>
 			   </li>
 			{{/each}}
@@ -113,7 +113,7 @@
 		<!-- 导航 -->
 		<script type="text/html" id="nav">
 			{{each data}}
-			<li ><a href="javascript:;"><i class="fa {{$value.font}}"></i>{{$value.title}}</a></li>
+			<li onclick="nav('{{$value.title}}')"><a href="javascript:;"><i class="fa {{$value.icon}}"></i>{{$value.title}}</a></li>
 			{{/each}}
 		</script>
 		<!--  随机推荐模板-->
