@@ -1,8 +1,4 @@
 const mongoose = require('mongoose');
-<<<<<<< HEAD
-=======
-// require('./Connect')
->>>>>>> 6cc89d6a9d3cfce72387800095db672184fb5bf7
 // 文章
 const essaySchema = new mongoose.Schema({
 	title: String,
