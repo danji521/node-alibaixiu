@@ -7,7 +7,10 @@ $.get('/home/swipe', (res) => {
 	$('.swipe-wrapper').html(html);
 })
 // 文章详情
-$.get('/home/detail', 'id=6040423195fad22b285ee357', (res) => {
+
+let url = window.location.search;
+let id = url.substring(4);
+$.get('/home/detail', 'id=' + id, (res) => {
 	console.log(res)
 	let html = template('article', {
 		data: res
