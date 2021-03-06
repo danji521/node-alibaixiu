@@ -1,5 +1,9 @@
 const Essay = require('../../model/Essay');
 module.exports = async (req, res, next) => {
-	const muster = await Essay.find({state:1}).sort('read').limit(4);
+	const muster = await Essay.find({
+		classify: req.query.classify,
+		state:req.query.state
+	}).limit(5);
+	
 	res.send(muster)
 }

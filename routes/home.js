@@ -22,7 +22,7 @@ home.get('/release', require('./home/release'))
 home.get('/classify', require('./home/classify'))
 // 详情
 home.get('/detail', require('./home/detail'))
-
-
+// 导航
+home.get('/nav', require('./home/nav'))
  
 module.exports = home;

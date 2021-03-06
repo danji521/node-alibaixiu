@@ -29,7 +29,7 @@
 				<div class="search">
 					<form>
 						<input type="text" class="keys" placeholder="输入关键字">
-						<input type="submit" class="btn" value="搜索">
+						<input type="button" class="btn" value="搜索">
 					</form>
 				</div>
 			</div>
@@ -39,7 +39,7 @@
 					<div class="body search">
 						<form>
 							<input type="text" class="keys" placeholder="输入关键字">
-							<input type="submit" class="btn" value="搜索">
+							<input type="button" class="btn" value="搜索">
 						</form>
 					</div>
 				</div>
@@ -125,7 +125,7 @@
 		<!-- 导航 -->
 		<script type="text/html" id="nav">
 			{{each data}}
-			<li><a href="javascript:;"><i class="fa {{$value.font}}"></i>{{$value.title}}</a></li>
+			<li onclick="nav('{{$value.title}}')"><a href="javascript:;"><i class="fa {{$value.icon}}"></i>{{$value.title}}</a></li>
 			{{/each}}
 		</script>
 		<!--  热门推荐模板-->
@@ -144,7 +144,7 @@
 			{{each data}}
 			   <li>
 			   	<a href="javascript:;">
-			   		<p class="title">{{$value.content}}</p>
+			   		<p class="title">{{$value.title}}</p>
 			   		<p class="reading">阅读({{$value.read}})</p>
 			   		<div class="pic">
 			   			<img src="{{$value.img}}" alt="">
@@ -163,9 +163,9 @@
 			   		</div>
 			   		<div class="txt">
 			   			<p>
-			   				<span>{{$value.name}}</span>{{$value.date}}说:
+			   				<span>{{$value.name}}</span>{{$value.time}}说:
 			   			</p>
-			   			<p>{{$value.content}}</p>
+			   			<p>123</p>
 			   		</div>
 			   	</a>
 			   </li>
@@ -195,7 +195,7 @@
 			   			</a>
 			   		</p>
 			   		<a href="javascript:;" class="thumb">
-			   			<img src="uploads/hots_2.jpg" alt="">
+			   			<img src="{{$value.img}}" alt="">
 			   		</a>
 			   	</div>
 			   </div>
