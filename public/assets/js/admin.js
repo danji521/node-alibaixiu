@@ -25,13 +25,7 @@ $.get('/admin/essay', (res) => {
 	});
 	$('.tbody').html(html);
 })
-// 翻页
-$.get('/admin/index', (res) => {
-	let html = template('pull-right', {
-		data: res
-	});
-	$('.pull-right').html(html);
-})
+
 // 删除文章
 function deletes(id) {
 	$.ajax({
@@ -81,3 +75,18 @@ function a(even) {
 	})
 
 }
+// 列表
+$.get('/admin/pageDown', (res) => {
+	let html = template('tbody', {
+		data: res.records
+	});
+	$('.tbody').html(html);
+})
+// 翻页
+$.get('/admin/pageDown', (res) => {
+	let html = template('pull-right', {
+		data: res
+	});
+	$('.pull-right').html(html);
+	console.log(res)
+})

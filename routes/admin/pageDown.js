@@ -1,5 +1,7 @@
 const Essay = require('../../model/Essay');
+// 分页模块
+const pagination = require('mongoose-sex-page');
 module.exports = async (req, res, next) => {
-	const muster = await Essay.find().skip(5*req.query.page).limit(5);
-	res.send(muster)
+	let posts = await pagination(Essay).page(1).size(3).display(8).exec();
+	res.send(posts)
 }

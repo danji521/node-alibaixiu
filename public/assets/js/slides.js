@@ -6,19 +6,33 @@ $.get('/home/swipe', (res) => {
 	$('.tbody').html(html);
 })
 // 图片上传
-// 当管理员选择文件的时候 触发事件
-$('#image').on('change', function () {
-	var file = this.files[0];
-	var formData = new FormData();
-	formData.append('cover', file);
+$('#image').on("change", function() {
+	let formData = new FormData();
+	let data = $('#image')[0].files[0];
+	formData.append('file', data)
 	$.ajax({
-		type: 'post',
 		url: '/admin/upload',
+		type: "post",
 		data: formData,
 		processData: false,
 		contentType: false,
-		success: function (response) {
-			console.log(response)
+		success: function(res) {
+			console.log(res)
+			image(res)
 		}
 	})
-});
+})
+// 添加
+function image(img) {
+	$('.btn-primary').click(res => {
+		let text = $('#text').val();
+
+		alert(text)
+
+
+
+
+
+
+	})
+}

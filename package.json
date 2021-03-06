@@ -5,7 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.11.18"
+    "express-formidable": "^1.2.0",
+    "mongoose": "^5.11.19",
+    "mongoose-sex-page": "^1.2.4"
   },
   "devDependencies": {},
   "scripts": {
